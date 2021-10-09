@@ -213,7 +213,7 @@ a.lb-close {	top: -22px;	position: absolute;	right: 40px;}
 	.mob-vdo { display:block !important;}
 	.mlogo { display:block !important;}
 	.mob-logo {display:none !important;}
-    .desk-vdo{ display:none !important;}
+    .desk-vdo{ display:none !important; visibility: hidden;}
 	.main-menu img {		width: 180px;	}
 	.features {		padding: 50px 35px;}
 	.modal-dialog {margin-top: 15% !important;}
