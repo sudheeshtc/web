@@ -182,7 +182,7 @@ a.lb-close {	top: -22px;	position: absolute;	right: 40px;}
 	.ri-applications h2 {		text-align: center;	}
 	.ri-applications {		height: 385vh;	}
 	.bs-example-one {		height: auto;	padding: 50px 15px 55px 40px;	width: 100%;}
-	.img-wrapper {width: 100%;		top: 50% !important;		padding-right: 0px !important;	}
+	.img-wrapper {width: 100%;		top: 60% !important;		padding-right: 0px !important;	}
 	#tabc_interface h3 {		text-align: center;		font-size: 35px !important;}
 	.ri-interface h4 {		font-size: 32px;}
 	.ri-interface p{margin-left: 0px !important;}
