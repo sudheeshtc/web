@@ -35,6 +35,39 @@ $('.modal').on('shown.bs.modal', function(e) {
 	jQuery("#gallery").unitegallery();
   });
 
+
+  var w = window.matchMedia("(max-width: 599px)");
+  var vid = document.getElementById("vid");
+  var source = document.createElement("source");
+  source.id = "hvid";
+  source.setAttribute("type", "video/mp4");
+  vid.appendChild(source);
+  if(w.matches) {
+	  source.removeAttribute("src");
+	  source.setAttribute("src", "https://sudheeshtc.github.io/web/images/ARC%20Construction%20Mobile_10sec.mp4");
+	  vid.load();
+  } else {
+	  source.removeAttribute("src");
+	  source.setAttribute("src", "https://sudheeshtc.github.io/web/images/ARC%20Construction%20Desktop_10sec.mp4");
+	  vid.load();
+  }
+  window.addEventListener("resize", function() {
+	  var w = window.matchMedia("(max-width: 599px)");
+	  var vid = document.getElementById("vid");
+	  var source = document.getElementById("hvid");
+	  if(w.matches) {
+		  source.src = "https://sudheeshtc.github.io/web/images/ARC%20Construction%20Mobile_10sec.mp4";
+		  vid.play();
+	  } else {
+		  source.src = "https://sudheeshtc.github.io/web/images/ARC%20Construction%20Desktop_10sec.mp4";
+		  vid.play();
+	  }
+  });
+
+
+
+  
+
 // scroll magic start
 const intro = document.querySelector('#scrollVideo');
 const video = intro.querySelector('video');
