@@ -45,13 +45,9 @@ $('.modal').on('shown.bs.modal', function(e) {
   if(w.matches) {
 	  source.removeAttribute("src");
 	  source.setAttribute("src", "https://sudheeshtc.github.io/web/images/ARC%20Construction%20Mobile_10sec.mp4");
-	  vid.load();
-	  vid.play();
   } else {
 	  source.removeAttribute("src");
 	  source.setAttribute("src", "https://sudheeshtc.github.io/web/images/ARC%20Construction%20Desktop_10sec.mp4");
-	  vid.load();
-	  vid.play();
   }
   window.addEventListener("resize", function() {
 	  var w = window.matchMedia("(max-width: 599px)");
@@ -60,13 +56,9 @@ $('.modal').on('shown.bs.modal', function(e) {
 	  if(w.matches) {
 		source.removeAttribute("src");
 		  source.src = "https://sudheeshtc.github.io/web/images/ARC%20Construction%20Mobile_10sec.mp4";
-		  vid.load();
-		  vid.play();
 	  } else {
 		source.removeAttribute("src");
 		  source.src = "https://sudheeshtc.github.io/web/images/ARC%20Construction%20Desktop_10sec.mp4";
-		  vid.load();
-		  vid.play();
 	  }
   });
 
