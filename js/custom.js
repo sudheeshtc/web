@@ -56,9 +56,11 @@ $('.modal').on('shown.bs.modal', function(e) {
 	  var vid = document.getElementById("vid");
 	  var source = document.getElementById("hvid");
 	  if(w.matches) {
+		source.removeAttribute("src");
 		  source.src = "https://sudheeshtc.github.io/web/images/ARC%20Construction%20Mobile_10sec.mp4";
 		  vid.play();
 	  } else {
+		source.removeAttribute("src");
 		  source.src = "https://sudheeshtc.github.io/web/images/ARC%20Construction%20Desktop_10sec.mp4";
 		  vid.play();
 	  }
