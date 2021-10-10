@@ -21,16 +21,26 @@ $('.modal').on('shown.bs.modal', function(e) {
 	jQuery("#gallery").unitegallery();
 });
 
-var senseSpeed = 5;
-var previousScroll = 0;
-$(window).scroll(function(event){
-   var scroller = $(this).scrollTop();
-   if (scroller-senseSpeed > previousScroll){
-      $(".mouse").filter(':not(:animated)').slideUp();
-   } else if (scroller+senseSpeed < previousScroll) {
-      $(".mouse").filter(':not(:animated)').slideDown();
-   }
-   previousScroll = scroller;
+var $mouse = $("#mouse");
+var opacity = $mouse.css("opacity");
+var scrollStopped;
+
+var fadeInCallback = function () {
+	if (typeof scrollStopped != 'undefined') {
+		clearInterval(scrollStopped);
+	}
+
+	scrollStopped = setTimeout(function () {
+		$mouse.animate({ opacity: 1 }, "fast");
+	}, 1000);
+}
+
+$(window).scroll(function () {
+	if (!$mouse.is(":animated") && opacity == 1) {
+		$mouse.animate({ opacity: 0 }, "slow", fadeInCallback);
+	} else {
+		fadeInCallback.call(this);
+	}
 });
 
 jQuery(document).ready(function($) {
