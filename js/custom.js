@@ -42,7 +42,7 @@ $(window).scroll(function () {
 		fadeInCallback.call(this);
 	}
 	$(".mouse").removeClass("vshow");
-	if($(window).scrollTop() + $(window).height() > ($(document).height() - 100) ) {
+	if($(window).scrollTop() + $(window).height() > ($(document).height() - 200) ) {
 		//you are at bottom
 		$(".mouse").addClass("vshow");
 	}
