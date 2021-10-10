@@ -41,10 +41,10 @@ $(window).scroll(function () {
 	} else {
 		fadeInCallback.call(this);
 	}
-	$(".mouse").removeClass("vshow");
+	$(".mouse_scroll").removeClass("vshow");
 	if($(window).scrollTop() + $(window).height() > ($(document).height() - 200) ) {
 		//you are at bottom
-		$(".mouse").addClass("vshow");
+		$(".mouse_scroll").addClass("vshow");
 	}
  });
 
