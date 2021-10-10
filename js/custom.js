@@ -32,7 +32,7 @@ var fadeInCallback = function () {
 
 	scrollStopped = setTimeout(function () {
 		$mouse.animate({ opacity: 1 }, "fast");
-	}, 1000);
+	}, 2500);
 }
 
 $(window).scroll(function () {
