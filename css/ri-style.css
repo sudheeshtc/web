@@ -209,7 +209,7 @@ a.lb-close {	top: -22px;	position: absolute;	right: 40px;}
 	.ri-arc h4 {		font-size: 32px;}
 	.ri-applications h4 {		font-size: 32px;}
 	.ri-applications h2 {		font-size: 32px;}
-	.pro-pic {		margin: 0 auto;		left: 0;		right: 0;	}
+	.pro-pic {		margin: 0 auto;		left: 0;	width: 75%;	right: 0;	}
 	.mob-vdo { display:block !important;}
 	.mlogo { display:block !important;}
 	.mob-logo {display:none !important;}
