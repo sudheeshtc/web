@@ -41,6 +41,9 @@ $(window).scroll(function () {
 	} else {
 		fadeInCallback.call(this);
 	}
+	if (window.innerHeight + window.scrollY > document.body.clientHeight) {
+		document.getElementById('mouse').style.display='none';
+	}
 });
 
 jQuery(document).ready(function($) {
