@@ -167,7 +167,7 @@ a.lb-close {	top: -22px;	position: absolute;	right: 40px;}
 .mouse:before {		width: 27px;		height: 43px;		background-color: #979494;		border-radius: 100px;	}
 .mouse:after {		background-color: #ffffff;		width: 4px;		height: 4px;		border-radius: 100%;		-webkit-animation: trackBallSlide 5s linear infinite;
 	animation: trackBallSlide 5s linear infinite;	}
-.vshow{ opacity: 0 !important;}
+.mouse.vshow { opacity: 0 !important;}
 
 @-webkit-keyframes colorSlide {
 	0% {			background-position: 0% 100%;		}
