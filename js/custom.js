@@ -41,10 +41,13 @@ $(window).scroll(function () {
 	} else {
 		fadeInCallback.call(this);
 	}
-	if (window.innerHeight + window.scrollY > document.body.clientHeight) {
-		document.getElementById('mouse').style.display='none';
+	$(".mouse").removeClass("vshow");
+	if($(window).scrollTop() + $(window).height() > ($(document).height() - 100) ) {
+		//you are at bottom
+		$(".mouse").addClass("vshow");
 	}
-});
+ });
+
 
 jQuery(document).ready(function($) {
 	var mainHeader = $('.cd-auto-hide-header'),
