@@ -164,7 +164,7 @@ a.lb-close {	top: -22px;	position: absolute;	right: 40px;}
 .mouse {		background: #4e5559 linear-gradient(transparent 0%, transparent 50%, #ffffff 50%, #ffffff 100%);		position:fixed;   z-index: 99;      bottom:9%;		right: 3%;		width: 30px;		height: 45px;		border-radius: 100px;		background-size: 100% 200%;
 	-webkit-animation: colorSlide 5s linear infinite, nudgeMouse 5s ease-out infinite;		animation: colorSlide 5s linear infinite, nudgeMouse 5s ease-out infinite;	}
 .mouse:before,	.mouse:after {		content: "";		position: absolute;		top: 0;		right: 0;		bottom: 0;		left: 0;		margin: auto;	}
-.mouse:before {		width: 26px;		height: 45px;		background-color: #b22222;		border-radius: 100px;	}
+.mouse:before {		width: 26px;		height: 45px;		background-color: #979494;		border-radius: 100px;	}
 .mouse:after {		background-color: #ffffff;		width: 5px;		height: 5px;		border-radius: 100%;		-webkit-animation: trackBallSlide 5s linear infinite;
 	animation: trackBallSlide 5s linear infinite;	}
 .mouse p {position: absolute;    font-family: "Cabin", sans-serif;    font-size: 12px;    color: #ffffff;    -webkit-animation: colorText 5s ease-out infinite, nudgeText 5s ease-out infinite;
