@@ -370,6 +370,7 @@ animation: colorText 5s ease-out infinite, nudgeText 5s ease-out infinite;    wi
 	.features {		padding: 50px 35px;}
 	.modal-dialog {margin-top: 15% !important;}
 	.ri-arc {height: 1420vh !important;}
+	.mouse {    bottom: 6%;    left: 0;   right: 0;    margin: 0 auto;}
 }
 
 @media(min-width:768px) and (max-width:999px) {
