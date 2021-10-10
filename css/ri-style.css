@@ -217,7 +217,7 @@ a.lb-close {	top: -22px;	position: absolute;	right: 40px;}
 	.main-menu img {		width: 180px;	}
 	.features {		padding: 50px 35px;}
 	.modal-dialog {margin-top: 15% !important;}
-	.ri-arc {height: 1450vh !important;}
+	.ri-arc {height: 1420vh !important;}
 }
 
 @media(min-width:768px) and (max-width:999px) {
