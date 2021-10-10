@@ -1,17 +1,5 @@
 $(document).ready(function() {
-
-	var prevScrollpos = window.pageYOffset;
-	window.onscroll = function() {
-	var currentScrollPos = window.pageYOffset;
-	  if (prevScrollpos > currentScrollPos) {
-		document.getElementById("main-menu").style.top = "0";
-	  } else {
-		document.getElementById("main-menu").style.top = "-96px";
-	  }
-	  prevScrollpos = currentScrollPos;
-	}
-
-// SMOOTH SCROLL
+	// SMOOTH SCROLL
 	$(function() {
 		$('.nav-item a, #home a').on('click', function(event) {
 			var $anchor = $(this);
@@ -22,46 +10,101 @@ $(document).ready(function() {
 		});
 	});
 });
-
- jQuery(document).ready(function(){
-jQuery(function() {
- jQuery(this).bind("contextmenu", function(event) {
- event.preventDefault();
-	 });
+jQuery(document).ready(function() {
+	jQuery(function() {
+		jQuery(this).bind("contextmenu", function(event) {
+			event.preventDefault();
+		});
+	});
 });
-});
-
 $('.modal').on('shown.bs.modal', function(e) {
 	jQuery("#gallery").unitegallery();
-  });
+});
 
+var senseSpeed = 5;
+var previousScroll = 0;
+$(window).scroll(function(event){
+   var scroller = $(this).scrollTop();
+   if (scroller-senseSpeed > previousScroll){
+      $(".mouse").filter(':not(:animated)').slideUp();
+   } else if (scroller+senseSpeed < previousScroll) {
+      $(".mouse").filter(':not(:animated)').slideDown();
+   }
+   previousScroll = scroller;
+});
 
-  var w = window.matchMedia("(max-width: 599px)");
-  var vid = document.getElementById("vid");
-  var source = document.createElement("source");
-  source.id = "hvid";
-  source.setAttribute("type", "video/mp4");
-  vid.appendChild(source);
-  if(w.matches) {
-	  source.removeAttribute("src");
-	  source.setAttribute("src", "images/ARC Construction Mobile_10sec.mp4");
-  } else {
-	  source.removeAttribute("src");
-	  source.setAttribute("src", "images/ARC Construction Desktop_10sec.mp4");
-  }
-  window.addEventListener("resize", function() {
-	  var w = window.matchMedia("(max-width: 599px)");
-	  var vid = document.getElementById("vid");
-	  var source = document.getElementById("hvid");
-	  if(w.matches) {
+jQuery(document).ready(function($) {
+	var mainHeader = $('.cd-auto-hide-header'),
+		secondaryNavigation = $('.cd-secondary-nav'),
+		//this applies only if secondary nav is below intro section
+		belowNavHeroContent = $('.sub-nav-hero'),
+		headerHeight = mainHeader.height();
+	//set scrolling variables
+	var scrolling = false,
+		previousTop = 0,
+		currentTop = 0,
+		scrollDelta = 10,
+		scrollOffset = 250;
+	mainHeader.on('click', '.nav-trigger', function(event) {
+		// open primary navigation on mobile
+		event.preventDefault();
+		mainHeader.toggleClass('nav-open');
+	});
+	$(window).on('scroll', function() {
+		if(!scrolling) {
+			scrolling = true;
+			(!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250): requestAnimationFrame(autoHideHeader);
+		}
+	});
+	$(window).on('resize', function() {
+		headerHeight = mainHeader.height();
+	});
+
+	function autoHideHeader() {
+		var currentTop = $(window).scrollTop();
+		(belowNavHeroContent.length > 0) ? checkStickyNavigation(currentTop) // secondary navigation below intro
+			: checkSimpleNavigation(currentTop);
+		previousTop = currentTop;
+		scrolling = false;
+	}
+
+	function checkSimpleNavigation(currentTop) {
+		//there's no secondary nav or secondary nav is below primary nav
+		if(previousTop - currentTop > scrollDelta) {
+			//if scrolling up...
+			mainHeader.removeClass('is-hidden');
+		} else if(currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
+			//if scrolling down...
+			mainHeader.addClass('is-hidden');
+		}
+	}
+});
+
+var w = window.matchMedia("(max-width: 599px)");
+var vid = document.getElementById("vid");
+var source = document.createElement("source");
+source.id = "hvid";
+source.setAttribute("type", "video/mp4");
+vid.appendChild(source);
+if(w.matches) {
+	source.removeAttribute("src");
+	source.setAttribute("src", "images/ARC Construction Mobile_10sec.mp4");
+} else {
+	source.removeAttribute("src");
+	source.setAttribute("src", "images/ARC Construction Desktop_10sec.mp4");
+}
+window.addEventListener("resize", function() {
+	var w = window.matchMedia("(max-width: 599px)");
+	var vid = document.getElementById("vid");
+	var source = document.getElementById("hvid");
+	if(w.matches) {
 		source.removeAttribute("src");
-		  source.src = "images/ARC Construction Mobile_10sec.mp4";
-	  } else {
+		source.src = "images/ARC Construction Mobile_10sec.mp4";
+	} else {
 		source.removeAttribute("src");
-		  source.src = "images/ARC Construction Desktop_10sec.mp4";
-	  }
-  });
-
+		source.src = "images/ARC Construction Desktop_10sec.mp4";
+	}
+});
 
 // scroll magic start
 const intro = document.querySelector('#scrollVideo');
@@ -126,8 +169,7 @@ const sceneAClose = new ScrollMagic.Scene({
 		triggerHook: 0.5 // when to trigger 0 is top 0.5 mid and 1 is bottom
 	})
 	//.addIndicators() //used for only debugging and showing trigger handles
-	.on("leave", function(event) {
-	}).addTo(controller);
+	.on("leave", function(event) {}).addTo(controller);
 const sceneA1 = new ScrollMagic.Scene({
 		duration: 320, // length of video in ms
 		triggerElement: user_interface, //name of the element to use as trigger
@@ -185,8 +227,7 @@ const sceneBClose = new ScrollMagic.Scene({
 		triggerHook: 0.5 // when to trigger 0 is top 0.5 mid and 1 is bottom
 	})
 	//.addIndicators() //used for only debugging and showing trigger handles
-	.on("leave", function(event) {
-	}).addTo(controller);
+	.on("leave", function(event) {}).addTo(controller);
 const sceneB1 = new ScrollMagic.Scene({
 		duration: 350, // length of video in ms
 		triggerElement: tabc_interface, //name of the element to use as trigger
