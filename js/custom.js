@@ -10,13 +10,13 @@ $(document).ready(function() {
 		});
 	});
 });
-//jQuery(document).ready(function() {
-	//jQuery(function() {
-	//	jQuery(this).bind("contextmenu", function(event) {
-		//	event.preventDefault();
-		//});
-	//});
-//});
+jQuery(document).ready(function() {
+	jQuery(function() {
+		jQuery(this).bind("contextmenu", function(event) {
+			event.preventDefault();
+		});
+	});
+});
 $('.modal').on('shown.bs.modal', function(e) {
 	jQuery("#gallery").unitegallery();
 });
