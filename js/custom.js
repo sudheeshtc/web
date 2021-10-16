@@ -48,6 +48,7 @@ $(window).scroll(function () {
 	}
  });
 
+
 $(document).ready(function () {
     $(document).click(function (event) {
         var clickover = $(event.target);
@@ -58,9 +59,11 @@ $(document).ready(function () {
     });
 });
 
+
  $(window).scroll(function() {
 	$(".navbar-collapse").removeClass('show', 1000);
 });
+
 
 jQuery(document).ready(function($) {
 	var mainHeader = $('.cd-auto-hide-header'),
