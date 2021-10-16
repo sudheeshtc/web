@@ -61,7 +61,10 @@ $(document).ready(function () {
 
 
  $(window).scroll(function() {
-	$(".navbar-collapse").removeClass('show');
+	//$(".navbar-collapse").removeClass('show');
+	if(!$( this ).hasClass('dropdown-toggle')){
+        $('.navbar-collapse').collapse('hide');
+    }
 });
 
 
