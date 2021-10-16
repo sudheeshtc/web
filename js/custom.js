@@ -60,11 +60,9 @@ $(document).ready(function () {
 });
 
 
-$(window).scroll(function () {
-	var _opened = $(".navbar-collapse").hasClass("show");
-	if (_opened === true && !clickover.hasClass("navbar-toggler")) {	
-	}
- });
+ $(window).scroll(function() {
+	$(".navbar-collapse").removeClass('show', 1000);
+});
 
 
 jQuery(document).ready(function($) {
