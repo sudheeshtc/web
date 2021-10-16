@@ -61,7 +61,7 @@ $(document).ready(function () {
 
 
  $(window).scroll(function() {
-	$(".navbar-collapse").removeClass('show', 1000);
+	$(".navbar-collapse").removeClass('show');
 });
 
 
